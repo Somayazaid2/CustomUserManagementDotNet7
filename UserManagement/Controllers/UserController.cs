@@ -46,5 +46,30 @@ namespace UserManagement.Controllers
             };
             return View(viewModel);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ManageRoles(UserRoleViewModel model)
+        {
+            var user = await _userManager.FindByIdAsync(model.UserId);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var userRoles = await _userManager.GetRolesAsync(user);
+            foreach (var role in model.Roles)
+            {
+                if (userRoles.Any(r => r == role.RoleName) && !role.IsSelected)
+                {
+                    await _userManager.RemoveFromRoleAsync(user, role.RoleName);
+                }
+                if (!userRoles.Any(r => r == role.RoleName) && role.IsSelected)
+                {
+                    await _userManager.AddToRoleAsync(user, role.RoleName);
+                }
+            }
+            
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

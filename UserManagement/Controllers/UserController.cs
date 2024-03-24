@@ -92,7 +92,58 @@ namespace UserManagement.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Edit(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound();
+            }
 
+            var viewModel = new ProfileFormViewModel
+            {
+                Id = userId,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                UserName = user.UserName
+            };
+            return View(viewModel);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(ProfileFormViewModel model)
+        {
+            if(!ModelState.IsValid)
+                return View(model);
+
+            var user = await _userManager.FindByIdAsync(model.Id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var userWithSameEmail = await _userManager.FindByEmailAsync(model.Email);
+            if(userWithSameEmail != null && userWithSameEmail.Id != model.Id)
+            {
+                ModelState.AddModelError("Email", "This email is already assigned to another user");
+                return View(model); 
+            }
+            var userWithSameUserName = await _userManager.FindByNameAsync(model.UserName);
+            if (userWithSameUserName != null && userWithSameUserName.Id != model.Id)
+            {
+                ModelState.AddModelError("UserName", "This UserName is already assigned to another user");
+                return View(model);
+            }
+
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Email = model.Email;
+            user.UserName = model.UserName;
+            await _userManager.UpdateAsync(user);
+
+
+            return RedirectToAction(nameof(Index));
+        }
         public async Task<IActionResult> ManageRoles(string userId)
         {
             var user  = await _userManager.FindByIdAsync(userId);

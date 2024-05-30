@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Net.Mail;
 using UserManagement.Models;
 using UserManagement.ViewModels;
@@ -14,10 +15,13 @@ namespace UserManagement.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        public UserController(UserManager<ApplicationUser> userManager,RoleManager<IdentityRole> roleManager)
+        private readonly ILogger<UserController> logger;
+
+        public UserController(UserManager<ApplicationUser> userManager,RoleManager<IdentityRole> roleManager, ILogger<UserController> logger)
         {
             _userManager  = userManager;
             _roleManager = roleManager;
+            this.logger = logger;
         }
         public async Task<IActionResult> Index()
         {
@@ -29,6 +33,7 @@ namespace UserManagement.Controllers
                 UserName = user.UserName,
                 Roles =  _userManager.GetRolesAsync(user).Result
             }).ToList();
+            logger.LogInformation("here is users :",users);
             return View(users);
         }
 
@@ -89,7 +94,6 @@ namespace UserManagement.Controllers
                 return View(model);
             }
             await _userManager.AddToRolesAsync(user, model.Roles.Where(r=>r.IsSelected).Select(r=>r.RoleName));
-
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Edit(string userId)

@@ -1,7 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog.Events;
+using Serilog.Sinks.Elasticsearch;
+using Serilog;
 using UserManagement.Data;
 using UserManagement.Models;
+using Serilog.Sinks.MSSqlServer;
 
 namespace UserManagement
 {
@@ -23,6 +27,15 @@ namespace UserManagement
                 .AddDefaultTokenProviders();
             builder.Services.AddControllersWithViews();
 
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+            .MinimumLevel.Override("System", LogEventLevel.Warning)
+            .Enrich.FromLogContext()
+            .WriteTo.MSSqlServer(
+                connectionString: connectionString,
+                sinkOptions: new MSSqlServerSinkOptions { TableName = "Logs" })
+            .CreateLogger();
+            builder.Host.UseSerilog();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

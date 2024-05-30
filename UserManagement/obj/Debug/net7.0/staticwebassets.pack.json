@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\bootbox.js\\bootbox.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootbox.js\\bootbox.min.js"
+    },
+    {
       "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
@@ -247,6 +251,22 @@
     {
       "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\toastr.js\\toastr.css",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.css"
+    },
+    {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\toastr.js\\toastr.js.map",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.js.map"
+    },
+    {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\toastr.js\\toastr.min.css",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.css"
+    },
+    {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\toastr.js\\toastr.min.js",
+      "PackagePath": "staticwebassets\\lib\\toastr.js\\toastr.min.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.UserManagement.Microsoft.AspNetCore.StaticWebAssets.props",

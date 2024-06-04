@@ -6,6 +6,8 @@ using Serilog;
 using UserManagement.Data;
 using UserManagement.Models;
 using Serilog.Sinks.MSSqlServer;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using UserManagement.Services;
 
 namespace UserManagement
 {
@@ -20,8 +22,8 @@ namespace UserManagement
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-            builder.Services.AddIdentity<ApplicationUser,IdentityRole>()
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
+            builder.Services.AddIdentity<ApplicationUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();

@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\images\\avtar.png"
     },
     {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\js\\qr.js",
+      "PackagePath": "staticwebassets\\js\\qr.js"
+    },
+    {
       "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
@@ -251,6 +255,14 @@
     {
       "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\qrcodejs\\qrcode.js",
+      "PackagePath": "staticwebassets\\lib\\qrcodejs\\qrcode.js"
+    },
+    {
+      "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\qrcodejs\\qrcode.min.js",
+      "PackagePath": "staticwebassets\\lib\\qrcodejs\\qrcode.min.js"
     },
     {
       "Id": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\toastr.js\\toastr.css",

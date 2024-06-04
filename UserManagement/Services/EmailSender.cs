@@ -8,7 +8,7 @@ namespace UserManagement.Services
     {
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var fromMail = "App Email-- Gmail";
+            var fromMail = "App Email -- > Gmail";
             var fromPassword = "App Password";
 
             var message = new MailMessage();

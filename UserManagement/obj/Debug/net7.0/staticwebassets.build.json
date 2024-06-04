@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ptGqi1TBFV+GWQNw7mYzV1jB7BEyvRYbav33DbuB95A=",
+  "Hash": "xFS3/LHYTu4DqZtNVY/baLAf06SZ66C9BfGCS+uWSmU=",
   "Source": "UserManagement",
   "BasePath": "_content/UserManagement",
   "Mode": "Default",
@@ -1122,6 +1122,23 @@
       "OriginalItemSpec": "wwwroot\\images\\avtar.png"
     },
     {
+      "Identity": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\js\\qr.js",
+      "SourceId": "UserManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\",
+      "BasePath": "_content/UserManagement",
+      "RelativePath": "js/qr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\qr.js"
+    },
+    {
       "Identity": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\js\\site.js",
       "SourceId": "UserManagement",
       "SourceType": "Discovered",
@@ -2123,6 +2140,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\qrcodejs\\qrcode.js",
+      "SourceId": "UserManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\",
+      "BasePath": "_content/UserManagement",
+      "RelativePath": "lib/qrcodejs/qrcode.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\qrcodejs\\qrcode.js"
+    },
+    {
+      "Identity": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\qrcodejs\\qrcode.min.js",
+      "SourceId": "UserManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\",
+      "BasePath": "_content/UserManagement",
+      "RelativePath": "lib/qrcodejs/qrcode.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\qrcodejs\\qrcode.min.js"
     },
     {
       "Identity": "D:\\somaya\\ITI\\MVC\\UserManagement\\UserManagement\\wwwroot\\lib\\toastr.js\\toastr.css",
